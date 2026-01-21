@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TASK_ID="b6c396ce-dd21-4786-985d-399218931060"
-MODEL="John6666/hassaku-xl-illustrious-v10style-sdxl"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/121a491d5dcfdcd8_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260116%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260116T020143Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7177cfc484db949469ed4b7c519ac30c56f987a906e2e039a0e5fb02fbc4ec27"
+TASK_ID="5b5c929e-77d5-4fe9-a57d-1754a3faadfc"
+MODEL="ehristoforu/Visionix-alpha"
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/bbfed67ef13eb8dd_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260115%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260115T191510Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=06dc990099d812bdbd36af865b5e3c0802e63018f7afc7e0249ba953d470cdb4"
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_person"
 
