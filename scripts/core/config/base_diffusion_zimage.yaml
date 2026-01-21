@@ -7,10 +7,10 @@ config:
     device: cuda
     network:
       type: lora
-      linear: 32
-      linear_alpha: 32
-      conv: 16
-      conv_alpha: 16
+      linear: 64
+      linear_alpha: 128
+      conv: 32
+      conv_alpha: 64
     save:
       dtype: bf16
       save_every: 250
@@ -23,14 +23,16 @@ config:
       resolution: [512, 768, 1024]
       is_reg: false
     train:
-      batch_size: 1
-      steps: 2000
-      lr: 0.0001
-      optimizer: adamw8bit
+      batch_size: 4
+      steps: 450
+      lr: 3e-5
+      optimizer: adamw
       gradient_checkpointing: true
       noise_scheduler: flowmatch
       timestep_type: weighted
       dtype: bf16
+      optimizer_params:
+        weight_decay: 1e-5
       ema_config:
         use_ema: true
         ema_decay: 0.995
