@@ -56,26 +56,7 @@
             ],
             "min_snr_gamma": 7
         },
-        "7637327a8414801bf0bb4d6d1b574dd95c05525165ee271cc085b64f89c8cba8": {
-            "prior_loss_weight": 0.3,
-            "min_snr_gamma": 5,
-            "max_grad_norm": 1.0,
-            "scale_weight_norms": 1,
-            "optimizer_args": [
-                "decouple=True",
-                "d_coef=0.9",
-                "weight_decay=0.05",
-                "use_bias_correction=True",
-                "safeguard_warmup=True"
-            ],
-            "network_args": [
-                "conv_dim=64",
-                "conv_alpha=64",
-                "dropout=0.05",
-                "rank_dropout=0.1",
-                "module_dropout=0.0"
-            ]
-        },
+        "7637327a8414801bf0bb4d6d1b574dd95c05525165ee271cc085b64f89c8cba8": {},
         "158598455e814319c65ccbf8bbae049200601b2ac4fb1429fed6158f2f5ac8bd": {
             "max_train_epochs": 30
         },
