@@ -52,12 +52,6 @@ text_encoder_lr = 1
 
 lr_scheduler = "constant"
 
-# noise_offset_type = "Original"
-# noise_offset = 0.0357
-# noise_offset_type = "Multires"
-# multires_noise_iterations = 6
-# multires_noise_discount = 0.3
-
 network_alpha = -1
 network_dim = -1
 network_module = "networks.lora"
