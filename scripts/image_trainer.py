@@ -68,6 +68,24 @@ def count_images_in_directory(directory_path: str) -> int:
     
     return count
 
+def extract_size_config(size_data: dict, dataset_size: int) -> dict:
+    if not size_data:
+        return None
+        
+    size_ranges = size_data.get("size_ranges", [])
+    for size_range in size_ranges:
+        min_size = size_range.get("min", 0)
+        max_size = size_range.get("max", float('inf'))
+        
+        if min_size <= dataset_size <= max_size:
+            print(f"Using size-based config for {dataset_size} images (range: {min_size}-{max_size})", flush=True)
+            return size_range.get("config", {})
+    
+    default_config = size_data.get("default", {})
+    if default_config:
+        print(f"Using default size-based config for {dataset_size} images", flush=True)
+    return default_config
+
 def load_size_based_config(model_type: str, is_style: bool, dataset_size: int) -> dict:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config_dir = os.path.join(script_dir, "lrs")
@@ -83,19 +101,7 @@ def load_size_based_config(model_type: str, is_style: bool, dataset_size: int) -
         with open(config_file, 'r') as f:
             size_config = json.load(f)
         
-        size_ranges = size_config.get("size_ranges", [])
-        for size_range in size_ranges:
-            min_size = size_range.get("min", 0)
-            max_size = size_range.get("max", float('inf'))
-            
-            if min_size <= dataset_size <= max_size:
-                print(f"Using size-based config for {dataset_size} images (range: {min_size}-{max_size})", flush=True)
-                return size_range.get("config", {})
-        
-        default_config = size_config.get("default", {})
-        if default_config:
-            print(f"Using default size-based config for {dataset_size} images", flush=True)
-        return default_config
+        return extract_size_config(size_config, dataset_size)
         
     except Exception as e:
         print(f"Warning: Could not load size-based config from {config_file}: {e}", flush=True)
@@ -174,31 +180,17 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
 
         lrs_config = load_lrs_config(model_type, is_style)
 
+        model_size_data = None
         if lrs_config:
             model_hash = hash_model(model_name)
             lrs_settings = get_config_for_model(lrs_config, model_hash)
 
             if lrs_settings:
-                for optional_key in [
-                    "max_grad_norm",
-                    "prior_loss_weight",
-                    "max_train_epochs",
-                    "train_batch_size",
-                    "max_train_steps",
-                    "network_alpha",
-                    "optimizer_args",
-                    "unet_lr",
-                    "text_encoder_lr",
-                    "lr_warmup_steps",
-                    "network_dropout",
-                    "min_snr_gamma",
-                    "seed",
-                    "noise_offset",
-                    "lr_scheduler",
-                    "save_every_n_epochs",
-                ]:
-                    if optional_key in lrs_settings:
-                        config[optional_key] = lrs_settings[optional_key]
+                # Extract size config if present in model settings
+                model_size_data = lrs_settings.pop("size_config", None)
+                
+                for key, value in lrs_settings.items():
+                    config[key] = value
             else:
                 print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
         else:
@@ -325,7 +317,15 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
                 print(f"Counted {dataset_size} images in training directory", flush=True)
 
         if dataset_size > 0:
-            size_config = load_size_based_config(model_type, is_style, dataset_size)
+            size_config = None
+            if model_size_data:
+                print(f"Found model-specific size config for {model_name}", flush=True)
+                size_config = extract_size_config(model_size_data, dataset_size)
+            
+            # Fallback to global size config if no model-specific one found
+            if not size_config:
+                size_config = load_size_based_config(model_type, is_style, dataset_size)
+
             if size_config:
                 print(f"Applying size-based config for {dataset_size} images", flush=True)
                 for key, value in size_config.items():
