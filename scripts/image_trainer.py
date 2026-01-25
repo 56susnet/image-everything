@@ -15,6 +15,7 @@ import re
 import time
 import yaml
 import toml
+import zipfile
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
@@ -396,9 +397,48 @@ async def main():
 
     print("Preparing dataset...", flush=True)
 
+    dataset_zip_path = train_paths.get_image_training_zip_save_path(args.task_id)
+    
+    dataset_size = 0
+    repeats = 1
+    
+    try:
+        if os.path.exists(dataset_zip_path):
+            with zipfile.ZipFile(dataset_zip_path, 'r') as zip_ref:
+                image_extensions = {'.jpg', '.jpeg', '.png', '.webp', '.bmp', '.gif'}
+                file_list = zip_ref.namelist()
+                for file in file_list:
+                    if not file.endswith('/') and not file.startswith('__MACOSX') and not file.split('/')[-1].startswith('.'):
+                        _, ext = os.path.splitext(file.lower())
+                        if ext in image_extensions:
+                            dataset_size += 1
+            
+            print(f"Counted {dataset_size} images in zip file.", flush=True)
+            
+            if dataset_size > 0:
+                if dataset_size <= 10:
+                    repeats = 40
+                elif dataset_size <= 20:
+                    repeats = 20
+                elif dataset_size <= 30:
+                    repeats = 15
+                elif dataset_size <= 50:
+                    repeats = 10
+                else:
+                    repeats = 1
+            
+            print(f"Calculated repeats: {repeats}", flush=True)
+        else:
+             print(f"Warning: Dataset zip not found at {dataset_zip_path}. Using default repeats.", flush=True)
+             repeats = cst.DIFFUSION_SDXL_REPEATS if args.model_type == ImageModelType.SDXL.value else cst.DIFFUSION_FLUX_REPEATS
+
+    except Exception as e:
+        print(f"Error calculating dataset size from zip: {e}. Using default repeats.", flush=True)
+        repeats = cst.DIFFUSION_SDXL_REPEATS if args.model_type == ImageModelType.SDXL.value else cst.DIFFUSION_FLUX_REPEATS
+
     prepare_dataset(
-        training_images_zip_path=train_paths.get_image_training_zip_save_path(args.task_id),
-        training_images_repeat=cst.DIFFUSION_SDXL_REPEATS if args.model_type == ImageModelType.SDXL.value else cst.DIFFUSION_FLUX_REPEATS,
+        training_images_zip_path=dataset_zip_path,
+        training_images_repeat=repeats,
         instance_prompt=cst.DIFFUSION_DEFAULT_INSTANCE_PROMPT,
         class_prompt=cst.DIFFUSION_DEFAULT_CLASS_PROMPT,
         job_id=args.task_id,
