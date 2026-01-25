@@ -179,26 +179,8 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             lrs_settings = get_config_for_model(lrs_config, model_hash)
 
             if lrs_settings:
-                for optional_key in [
-                    "max_grad_norm",
-                    "prior_loss_weight",
-                    "max_train_epochs",
-                    "train_batch_size",
-                    "max_train_steps",
-                    "network_alpha",
-                    "optimizer_args",
-                    "unet_lr",
-                    "text_encoder_lr",
-                    "lr_warmup_steps",
-                    "network_dropout",
-                    "min_snr_gamma",
-                    "seed",
-                    "noise_offset",
-                    "lr_scheduler",
-                    "save_every_n_epochs",
-                ]:
-                    if optional_key in lrs_settings:
-                        config[optional_key] = lrs_settings[optional_key]
+                for key, value in lrs_settings.items():
+                    config[key] = value
             else:
                 print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
         else:
