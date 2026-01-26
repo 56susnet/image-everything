@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TASK_ID="74f78351-29a5-481e-aacb-8f42aab3f437"
-MODEL="OnomaAIResearch/Illustrious-xl-early-release-v0"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/ff10db6ee6d676a4_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260101%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260101T161648Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7344099f7d94897bd6182c67070b4fab7c943517019a44523d6c8f0e78350986"
+TASK_ID="4cc4d052-5294-4245-b138-f8a35d1fc072"
+MODEL="zenless-lab/sdxl-blue-pencil-xl-v7"
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/61b4bac76e714d15_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260123%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260123T162741Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=162ceb1063168ea8ca578c45a026236ede59dd932e1d91c144d67ea22fe51b07"
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_person"
 

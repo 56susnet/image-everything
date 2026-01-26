@@ -1,53 +1,79 @@
-job: extension
-config:
-  name: last
-  process:
-  - type: diffusion_trainer
-    training_folder: /app/checkpoints
-    device: cuda
-    network:
-      type: lora
-      linear: 128
-      linear_alpha: 128
-    save:
-      dtype: bf16
-      save_every: 100
-      max_step_saves_to_keep: 4
-      save_format: diffusers
-    datasets:
-    - folder_path: /dataset/images
-      caption_ext: txt
-      cache_latents_to_disk: true
-      resolution: [512, 768, 1024]
-      is_reg: false
-    train:
-      batch_size: 1
-      steps: 1500
-      lr: 0.0001
-      optimizer: adamw8bit
-      gradient_checkpointing: true
-      gradient_accumulation: 1
-      noise_scheduler: flowmatch
-      timestep_type: weighted
-      dtype: bf16
-      cache_text_embeddings: true
-      train_unet: true
-      train_text_encoder: false
-      optimizer_params:
-        weight_decay: 1e-5
-      ema_config:
-        use_ema: true
-        ema_decay: 0.995
-      do_cfg: true
-      cfg_scale: 6.0
-    model:
-      name_or_path: /cache/models
-      arch: qwen_image
-      quantize: true
-      qtype: uint3|/cache/hf_cache/qwen_image_torchao_uint3.safetensors
-      quantize_te: true
-      qtype_te: qfloat8
-      low_vram: true
-meta:
-  name: qwen_image_lora
-  version: '1.0'
+no_metadata = true
+async_upload = true
+bucket_no_upscale = true
+bucket_reso_steps = 64
+cache_latents = true
+cache_latents_to_disk = true
+caption_extension = ".txt"
+dynamo_backend = "no"
+enable_bucket = true
+gradient_checkpointing = true
+low_vram = false
+
+###### huggingface ######
+huggingface_path_in_repo = "checkpoint"
+huggingface_repo_id = ""
+huggingface_repo_type = "model"
+huggingface_repo_visibility = "public"
+huggingface_token = ""
+
+max_bucket_reso = 2048
+max_data_loader_n_workers = 2
+max_grad_norm = 1
+max_token_length = 75
+min_bucket_reso = 256
+mixed_precision = "bf16"
+no_half_vae = true
+output_dir = "test_sdxl_sd3"
+output_name = "last"
+pretrained_model_name_or_path = ""
+prior_loss_weight = 0.8
+resolution = "1024,1024"
+sample_prompts = ""
+sample_sampler = "euler_a"
+save_model_as = "safetensors"
+save_precision = "bf16"
+full_fp16 = false
+train_data_dir = "img"
+training_comment = ""
+xformers = true
+
+###### steps and epochs ######
+max_train_epochs = 21
+save_every_n_epochs = 5
+
+###### loss function ######
+loss_type = "l2"
+
+###### batch size ######
+train_batch_size = 4
+gradient_accumulation_steps = 1
+
+###### optimizer ######
+optimizer_type = "prodigy"
+optimizer_args = ["decouple=True", "d_coef=1", "weight_decay=0.001", "use_bias_correction=True", "safeguard_warmup=True"]
+unet_lr = 1
+text_encoder_lr = 1
+
+###### lr scheduler ######
+lr_scheduler = "constant"
+
+###### noise offset ######
+# noise_offset_type = "Original"
+# noise_offset = 0.0357
+# noise_offset_type = "Multires"
+# multires_noise_iterations = 6
+# multires_noise_discount = 0.3
+
+###### misc ######
+network_alpha = -1
+network_dim = -1
+network_module = "networks.lora"
+network_args = []
+network_dropout = 0
+caption_dropout_rate = 0
+clip_skip = 1
+max_timestep = 1000
+min_snr_gamma = 7
+scale_weight_norms = 5
+seed = 2951032222
