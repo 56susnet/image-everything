@@ -402,39 +402,42 @@ async def main():
     dataset_size = 0
     repeats = 1
     
-    try:
-        if os.path.exists(dataset_zip_path):
-            with zipfile.ZipFile(dataset_zip_path, 'r') as zip_ref:
-                image_extensions = {'.jpg', '.jpeg', '.png', '.webp', '.bmp', '.gif'}
-                file_list = zip_ref.namelist()
-                for file in file_list:
-                    if not file.endswith('/') and not file.startswith('__MACOSX') and not file.split('/')[-1].startswith('.'):
-                        _, ext = os.path.splitext(file.lower())
-                        if ext in image_extensions:
-                            dataset_size += 1
-            
-            print(f"Counted {dataset_size} images in zip file.", flush=True)
-            
-            if dataset_size > 0:
-                if dataset_size <= 10:
-                    repeats = 40
-                elif dataset_size <= 20:
-                    repeats = 20
-                elif dataset_size <= 30:
-                    repeats = 15
-                elif dataset_size <= 50:
-                    repeats = 10
-                else:
-                    repeats = 1
-            
-            print(f"Calculated repeats: {repeats}", flush=True)
-        else:
-             print(f"Warning: Dataset zip not found at {dataset_zip_path}. Using default repeats.", flush=True)
-             repeats = cst.DIFFUSION_SDXL_REPEATS if args.model_type == ImageModelType.SDXL.value else cst.DIFFUSION_FLUX_REPEATS
-
-    except Exception as e:
-        print(f"Error calculating dataset size from zip: {e}. Using default repeats.", flush=True)
-        repeats = cst.DIFFUSION_SDXL_REPEATS if args.model_type == ImageModelType.SDXL.value else cst.DIFFUSION_FLUX_REPEATS
+    if args.model_type == ImageModelType.SDXL.value:
+        try:
+            if os.path.exists(dataset_zip_path):
+                with zipfile.ZipFile(dataset_zip_path, 'r') as zip_ref:
+                    image_extensions = {'.jpg', '.jpeg', '.png', '.webp', '.bmp', '.gif'}
+                    file_list = zip_ref.namelist()
+                    for file in file_list:
+                        if not file.endswith('/') and not file.startswith('__MACOSX') and not file.split('/')[-1].startswith('.'):
+                            _, ext = os.path.splitext(file.lower())
+                            if ext in image_extensions:
+                                dataset_size += 1
+                
+                print(f"Counted {dataset_size} images in zip file.", flush=True)
+                
+                if dataset_size > 0:
+                    if dataset_size <= 10:
+                        repeats = 40
+                    elif dataset_size <= 20:
+                        repeats = 20
+                    elif dataset_size <= 30:
+                        repeats = 15
+                    elif dataset_size <= 50:
+                        repeats = 10
+                    else:
+                        repeats = 1
+                
+                print(f"Calculated repeats for SDXL: {repeats}", flush=True)
+            else:
+                 print(f"Warning: Dataset zip not found at {dataset_zip_path}. Using default repeats.", flush=True)
+                 repeats = cst.DIFFUSION_SDXL_REPEATS
+    
+        except Exception as e:
+            print(f"Error calculating dataset size from zip: {e}. Using default repeats.", flush=True)
+            repeats = cst.DIFFUSION_SDXL_REPEATS
+    else:
+        repeats = cst.DIFFUSION_NON_SDXL_REPEATS
 
     prepare_dataset(
         training_images_zip_path=dataset_zip_path,
