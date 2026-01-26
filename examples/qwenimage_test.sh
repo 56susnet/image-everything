@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TASK_ID="1c93dd95-2e89-48d9-813d-e0f521599cfd"
+TASK_ID="e6460ee0-c35a-4b08-af31-fc26cbe32f05"
 MODEL="gradients-io-tournaments/Qwen-Image"
-DATASET_ZIP="https://gradients.s3.eu-north-1.amazonaws.com/dc9853fb35c40bd4_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVVZOOA7SA4UOFLPI%2F20251221%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Date=20251221T212609Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=865abddfccce78e1964b0abb468c3fc7a591019820d3a3024f7d4220757da588"
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/be2ebc29f2dac703_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260123%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260123T180441Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=af9333b8ab8b39c3af04447cf98e91edc30a215d3ef40c7e753623fe54c4189e"
 MODEL_TYPE="qwen-image"
 EXPECTED_REPO_NAME="test_qwenimage"
 
