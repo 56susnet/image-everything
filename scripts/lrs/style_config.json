@@ -520,7 +520,7 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 35,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3e-05,
