@@ -971,11 +971,11 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 48,
-                "train_batch_size": 6,
+                "max_train_epochs": 55,
+                "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.855,
-                "text_encoder_lr": 0.855,
+                "unet_lr": 0.9,
+                "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
                 "min_snr_gamma": 5,
                 "max_data_loader_n_workers": 4,
