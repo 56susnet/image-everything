@@ -953,7 +953,7 @@
         },
         "0b7169dc27a95818a024b479271167dd8bb221ee1cebf58a683378927eb447c3": {
             "xs": {
-                "max_train_epochs": 50,
+                "max_train_epochs": 70,
                 "train_batch_size": 4,
                 "gradient_accumulation_steps": 2,
                 "unet_lr": 0.9,
@@ -971,7 +971,7 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 50,
+                "max_train_epochs": 60,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 0.95,
@@ -989,7 +989,7 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 38,
+                "max_train_epochs": 45,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 1.0,
