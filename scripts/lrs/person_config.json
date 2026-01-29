@@ -1998,7 +1998,7 @@
         },
         "eb324bfcad14e8f1d46346f46ae7af7d3e58c3babbc1f699ee7c61baab291369": {
             "xs": {
-                "max_train_epochs": 35,
+                "max_train_epochs": 50,
                 "train_batch_size": 4,
                 "gradient_accumulation_steps": 2,
                 "unet_lr": 0.8,
@@ -2016,7 +2016,7 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
+                "max_train_epochs": 42,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 0.9,
@@ -2034,7 +2034,7 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 26,
+                "max_train_epochs": 35,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 1.0,
@@ -2053,7 +2053,7 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 19,
+                "max_train_epochs": 25,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 1.1,
@@ -2072,7 +2072,7 @@
                 ]
             },
             "xl": {
-                "max_train_epochs": 11,
+                "max_train_epochs": 18,
                 "train_batch_size": 12,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 1.2,
