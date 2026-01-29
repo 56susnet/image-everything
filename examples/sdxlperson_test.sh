@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="74f78351-29a5-481e-aacb-8f42aab3f437"
-MODEL="OnomaAIResearch/Illustrious-xl-early-release-v0"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/ff10db6ee6d676a4_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260101%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260101T161648Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7344099f7d94897bd6182c67070b4fab7c943517019a44523d6c8f0e78350986"
+TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
+MODEL="stabilityai/stable-diffusion-xl-base-1.0"
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/f6cee62a4179b3f6_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260123%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260123T192640Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cb3d7b11b5fcc1b3b3f1e695dc0a373cb2a4ddef249d4cf2f803f46945a9e717"
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_person"
+EXPECTED_REPO_NAME="test_person-6"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""

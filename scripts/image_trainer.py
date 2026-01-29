@@ -68,38 +68,7 @@ def count_images_in_directory(directory_path: str) -> int:
     
     return count
 
-def load_size_based_config(model_type: str, is_style: bool, dataset_size: int) -> dict:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    config_dir = os.path.join(script_dir, "lrs")
-    
-    if model_type == "flux":
-        return None
-    elif is_style:
-        config_file = os.path.join(config_dir, "size_style.json")
-    else:
-        config_file = os.path.join(config_dir, "size_person.json")
-    
-    try:
-        with open(config_file, 'r') as f:
-            size_config = json.load(f)
-        
-        size_ranges = size_config.get("size_ranges", [])
-        for size_range in size_ranges:
-            min_size = size_range.get("min", 0)
-            max_size = size_range.get("max", float('inf'))
-            
-            if min_size <= dataset_size <= max_size:
-                print(f"Using size-based config for {dataset_size} images (range: {min_size}-{max_size})", flush=True)
-                return size_range.get("config", {})
-        
-        default_config = size_config.get("default", {})
-        if default_config:
-            print(f"Using default size-based config for {dataset_size} images", flush=True)
-        return default_config
-        
-    except Exception as e:
-        print(f"Warning: Could not load size-based config from {config_file}: {e}", flush=True)
-        return None
+
 
 def get_config_for_model(lrs_config: dict, model_name: str) -> dict:
     if not isinstance(lrs_config, dict):
@@ -172,6 +141,13 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
         with open(config_template_path, "r") as file:
             config = toml.load(file)
 
+        dataset_size = 0
+        if os.path.exists(train_data_dir):
+            dataset_size = count_images_in_directory(train_data_dir)
+            if dataset_size > 0:
+                print(f"Counted {dataset_size} images in training directory", flush=True)
+
+        size_config_loaded = False
         lrs_config = load_lrs_config(model_type, is_style)
 
         if lrs_config:
@@ -179,8 +155,30 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             lrs_settings = get_config_for_model(lrs_config, model_hash)
 
             if lrs_settings:
-                for key, value in lrs_settings.items():
-                    config[key] = value
+                if model_type == "flux":
+                    print(f"Applying model-specific config for Flux model", flush=True)
+                    for key, value in lrs_settings.items():
+                        config[key] = value
+                else:
+                    size_key = None
+                    if 1 <= dataset_size <= 10:
+                        size_key = "xs"
+                    elif 11 <= dataset_size <= 20:
+                        size_key = "s"
+                    elif 21 <= dataset_size <= 30:
+                        size_key = "m"
+                    elif 31 <= dataset_size <= 50:
+                        size_key = "l"
+                    elif 51 <= dataset_size <= 1000:
+                        size_key = "xl"
+                    
+                    if size_key and size_key in lrs_settings:
+                        print(f"Applying model-specific config for size '{size_key}'", flush=True)
+                        for key, value in lrs_settings[size_key].items():
+                            config[key] = value
+                        size_config_loaded = True
+                    else:
+                        print(f"Warning: No size configuration '{size_key}' found for model '{model_name}'.", flush=True)
             else:
                 print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
         else:
@@ -300,18 +298,9 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             config["network_args"] = network_config["network_args"]
 
 
-        dataset_size = 0
-        if os.path.exists(train_data_dir):
-            dataset_size = count_images_in_directory(train_data_dir)
-            if dataset_size > 0:
-                print(f"Counted {dataset_size} images in training directory", flush=True)
-
-        if dataset_size > 0:
-            size_config = load_size_based_config(model_type, is_style, dataset_size)
-            if size_config:
-                print(f"Applying size-based config for {dataset_size} images", flush=True)
-                for key, value in size_config.items():
-                    config[key] = value
+        # Old size config search removed as requested
+        if dataset_size > 0 and not size_config_loaded:
+             print(f"Warning: No size-specific configuration (xs/s/m/l/xl) found for model '{model_name}' with {dataset_size} images. Using model defaults.", flush=True)
         
         config_path = os.path.join(train_cst.IMAGE_CONTAINER_CONFIG_SAVE_PATH, f"{task_id}.toml")
         save_config_toml(config, config_path)
