@@ -344,6 +344,43 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
 
 
         # Old size config search removed as requested
+
+        # General size config fallback
+        if dataset_size > 0 and not size_config_loaded:
+             print("Checking for general size configuration...", flush=True)
+             
+             size_key = None
+             if 1 <= dataset_size <= 10:
+                 size_key = "xs"
+             elif 11 <= dataset_size <= 20:
+                 size_key = "s"
+             elif 21 <= dataset_size <= 30:
+                 size_key = "m"
+             elif 31 <= dataset_size <= 50:
+                 size_key = "l"
+             elif dataset_size >= 51:
+                 size_key = "xl"
+
+             if size_key:
+                 lrs_dir = os.path.join(script_dir, "lrs")
+                 if is_style:
+                     general_size_file = os.path.join(lrs_dir, "style_size.json")
+                 else:
+                     general_size_file = os.path.join(lrs_dir, "person_size.json")
+                 
+                 if os.path.exists(general_size_file):
+                     try:
+                         with open(general_size_file, 'r') as f:
+                             general_size_config = json.load(f)
+                             
+                         if "data" in general_size_config and size_key in general_size_config["data"]:
+                             print(f"Applying general size config from {os.path.basename(general_size_file)} for size '{size_key}'", flush=True)
+                             for key, value in general_size_config["data"][size_key].items():
+                                 config[key] = value
+                             size_config_loaded = True
+                     except Exception as e:
+                         print(f"Error loading general size config: {e}", flush=True)
+
         if dataset_size > 0 and not size_config_loaded:
              print(f"Warning: No size-specific configuration (xs/s/m/l/xl) found for model '{model_name}' with {dataset_size} images. Using model defaults.", flush=True)
         
