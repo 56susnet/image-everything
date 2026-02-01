@@ -214,7 +214,7 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
                         size_key = "m"
                     elif 31 <= dataset_size <= 50:
                         size_key = "l"
-                    elif 51 <= dataset_size <= 1000:
+                    elif dataset_size >= 51:
                         size_key = "xl"
                     
                     if size_key and size_key in lrs_settings:
