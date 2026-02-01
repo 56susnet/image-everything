@@ -333,10 +333,17 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
         config["output_dir"] = output_dir
 
         if model_type == "sdxl":
+            default_network_id = 235
             if is_style:
-                network_config = config_mapping[network_config_style[model_name]]
+                network_id = network_config_style.get(model_name, default_network_id)
+                if model_name not in network_config_style:
+                     print(f"Warning: Model '{model_name}' not found in style config. Using default network ID {default_network_id}.", flush=True)
             else:
-                network_config = config_mapping[network_config_person[model_name]]
+                network_id = network_config_person.get(model_name, default_network_id)
+                if model_name not in network_config_person:
+                     print(f"Warning: Model '{model_name}' not found in person config. Using default network ID {default_network_id}.", flush=True)
+
+            network_config = config_mapping[network_id]
 
             config["network_dim"] = network_config["network_dim"]
             config["network_alpha"] = network_config["network_alpha"]
