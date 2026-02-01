@@ -1,4 +1,3 @@
-#birong
 no_metadata = true
 ae = "/app/flux/ae.safetensors"                                                                                                                                      
 apply_t5_attn_mask = true                                                                                                                                                      
