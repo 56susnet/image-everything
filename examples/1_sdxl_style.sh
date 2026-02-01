@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="853ecade-e3bc-4457-b736-96008a4aba1a"
-MODEL="fluently/Fluently-XL-Final"
-DATASET_ZIP=""
+TASK_ID="9fb20acd-836b-4450-8e64-4bfba602b6b6"
+MODEL="Lykon/dreamshaper-xl-1-0"
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/5fee68863eb251ec_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260129%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260129T170352Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=81739287e408a45ce07c001aecae09e0acc2bd2677a0b9d0f391fadfa18ca414"
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_style-1"
+EXPECTED_REPO_NAME="test_style-test"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""
@@ -21,7 +21,7 @@ echo "Downloading model and dataset..."
 docker run --rm   --volume "$CHECKPOINTS_DIR:/cache:rw"   --name downloader-image   trainer-downloader   --task-id "$TASK_ID"   --model "$MODEL"   --dataset "$DATASET_ZIP"   --task-type "ImageTask"
 
 echo "Starting image training..."
-docker run --rm --gpus all   --security-opt=no-new-privileges   --cap-drop=ALL   --memory=32g   --cpus=8   --network none   --env TRANSFORMERS_CACHE=/cache/hf_cache   --volume "$CHECKPOINTS_DIR:/cache:rw"   --volume "$OUTPUTS_DIR:/app/checkpoints/:rw"   --name image-trainer-example   standalone-image-trainer   --task-id "$TASK_ID"   --model "$MODEL"   --dataset-zip "$DATASET_ZIP"   --model-type "$MODEL_TYPE"   --expected-repo-name "$EXPECTED_REPO_NAME"   --hours-to-complete 1
+docker run --rm --gpus all   --security-opt=no-new-privileges   --cap-drop=ALL   --memory=32g   --cpus=8   --network none   --env TRANSFORMERS_CACHE=/cache/hf_cache   --volume "$CHECKPOINTS_DIR:/cache:rw"   --volume "$OUTPUTS_DIR:/app/checkpoints/:rw"   --name image-trainer-example   standalone-image-trainer   --task-id "$TASK_ID"   --model "$MODEL"   --dataset-zip "$DATASET_ZIP"   --model-type "$MODEL_TYPE"   --expected-repo-name "$EXPECTED_REPO_NAME"   --hours-to-complete 0.1
 
 echo "Uploading model to HuggingFace..."
 docker run --rm --gpus all   --volume "$OUTPUTS_DIR:/app/checkpoints/:rw"   --env HUGGINGFACE_TOKEN="$HUGGINGFACE_TOKEN"   --env HUGGINGFACE_USERNAME="$HUGGINGFACE_USERNAME"   --env TASK_ID="$TASK_ID"   --env EXPECTED_REPO_NAME="$EXPECTED_REPO_NAME"   --env LOCAL_FOLDER="$LOCAL_FOLDER"   --env HF_REPO_SUBFOLDER="checkpoints"   --name hf-uploader   hf-uploader
