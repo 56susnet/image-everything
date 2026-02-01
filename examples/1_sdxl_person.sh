@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="18de36d8-3441-42d1-8003-3cef83ae2f83"
-MODEL="fluently/Fluently-XL-Final"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/512fb3d28156df59_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260123%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260123T191646Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=59f34214a61f895a2868c1987f179a936c6c7e2997174838584dea0cb117303d"
+TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
+MODEL="stabilityai/stable-diffusion-xl-base-1.0"
+DATASET_ZIP=""
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_style-1"
+EXPECTED_REPO_NAME="test_person-6"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""
