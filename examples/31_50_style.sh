@@ -2,7 +2,7 @@
 
 TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
 MODEL=""
-DATASET_ZIP=""
+DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/e5c5a6456d6fcdb4_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260130%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260130T112625Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b1041a40227d3ee9de063df2795f5b8ae9276d3ab29a8c4f4b7d720b2e6a2fed"
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_person-6"
 
