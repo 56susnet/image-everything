@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TASK_ID="18de36d8-3441-42d1-8003-3cef83ae2f83"
+TASK_ID="853ecade-e3bc-4457-b736-96008a4aba1a"
 MODEL="fluently/Fluently-XL-Final"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
