@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
-MODEL="stabilityai/stable-diffusion-xl-base-1.0"
+MODEL=""
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_person-6"
