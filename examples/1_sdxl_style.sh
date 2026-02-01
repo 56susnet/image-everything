@@ -6,8 +6,8 @@ DATASET_ZIP=""
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_style-1"
 
-HUGGINGFACE_TOKEN=""
-HUGGINGFACE_USERNAME=""
+HUGGINGFACE_TOKEN="hf_XwzXwzXwzXwzXwzXwzXwzXwzXwzXwzXwzXwz"
+HUGGINGFACE_USERNAME="test_user"
 LOCAL_FOLDER="/app/checkpoints/$TASK_ID/$EXPECTED_REPO_NAME"
 
 CHECKPOINTS_DIR="$(pwd)/secure_checkpoints"
