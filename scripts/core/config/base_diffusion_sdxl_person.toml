@@ -51,7 +51,7 @@ unet_lr = 1
 text_encoder_lr = 1
 
 lr_scheduler = "cosine_with_min_lr"
-lr_warmup_steps = 10
+lr_warmup_steps = 1
 lr_scheduler_min_lr_ratio = 0.25
 
 network_alpha = -1
