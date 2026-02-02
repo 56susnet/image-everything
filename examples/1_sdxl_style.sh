@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="18de36d8-3441-42d1-8003-3cef83ae2f83"
-MODEL="fluently/Fluently-XL-Final"
+TASK_ID="1234"
+MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_style-1"
+EXPECTED_REPO_NAME="John6666/nova-anime-xl-pony-v5-sdxl-style-1-10-1"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
-MODEL=""
+MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
 DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/ec8d680e4426f33b_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260130%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260130T013354Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f46727f5850169a86d20f9b311e6a8930e0fbc6fd4be58792f28eea85402c7da"
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_person-6"
+EXPECTED_REPO_NAME="John6666/nova-anime-xl-pony-v5-sdxl-style-11-20-1"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""
