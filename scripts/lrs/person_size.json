@@ -1,7 +1,7 @@
 {
     "data": {
         "xs": {
-            "max_train_epochs": 35,
+            "max_train_epochs": 3,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "lr_scheduler": "cosine_with_min_lr",
@@ -17,7 +17,7 @@
             ]
         },
         "s": {
-            "max_train_epochs": 32,
+            "max_train_epochs": 3,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "lr_scheduler": "cosine_with_min_lr",
@@ -33,7 +33,7 @@
             ]
         },
         "m": {
-            "max_train_epochs": 26,
+            "max_train_epochs": 3,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "lr_scheduler": "cosine_with_min_lr",
@@ -49,7 +49,7 @@
             ]
         },
         "l": {
-            "max_train_epochs": 19,
+            "max_train_epochs": 3,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "lr_scheduler": "cosine_with_min_lr",
@@ -65,7 +65,7 @@
             ]
         },
         "xl": {
-            "max_train_epochs": 11,
+            "max_train_epochs": 3,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "lr_scheduler": "cosine_with_min_lr",
