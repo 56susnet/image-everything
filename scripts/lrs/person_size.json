@@ -1,7 +1,7 @@
 {
     "data": {
         "xs": {
-            "max_train_epochs": 10,
+            "max_train_epochs": 20,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "train_batch_size": 12,
@@ -18,7 +18,7 @@
             ]
         },
         "s": {
-            "max_train_epochs": 10,
+            "max_train_epochs": 20,
             "unet_lr": 1,
             "text_encoder_lr": 1,
             "train_batch_size": 12,

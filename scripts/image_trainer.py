@@ -584,6 +584,11 @@ async def main():
             if file.endswith(".safetensors") and "optimizer" not in file:
                  full_path = os.path.join(root, file)
                  checkpoints.append(full_path)
+                 
+    # Sort by modification time (newest first) and take top 3
+    if checkpoints:
+        checkpoints.sort(key=os.path.getmtime, reverse=True)
+        checkpoints = checkpoints[:3]
     
     if not checkpoints:
         print("No checkpoints found for evaluation.", flush=True)
