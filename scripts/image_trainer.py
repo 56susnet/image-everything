@@ -193,41 +193,90 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
                 print(f"Counted {dataset_size} images in training directory", flush=True)
 
         size_config_loaded = False
-        lrs_config = load_lrs_config(model_type, is_style)
+        
+        # PRIORITY 1: Try to load size-based config first (person_size.json / style_size.json)
+        if dataset_size > 0:
+            print("Checking for size-based configuration (PRIORITY)...", flush=True)
+            
+            size_key = None
+            if 1 <= dataset_size <= 10:
+                size_key = "xs"
+            elif 11 <= dataset_size <= 20:
+                size_key = "s"
+            elif 21 <= dataset_size <= 30:
+                size_key = "m"
+            elif 31 <= dataset_size <= 50:
+                size_key = "l"
+            elif dataset_size >= 51:
+                size_key = "xl"
 
-        if lrs_config:
-            model_hash = hash_model(model_name)
-            lrs_settings = get_config_for_model(lrs_config, model_hash)
-
-            if lrs_settings:
-                if model_type == "flux":
-                    print(f"Applying model-specific config for Flux model", flush=True)
-                    for key, value in lrs_settings.items():
-                        config[key] = value
+            if size_key:
+                lrs_dir = os.path.join(script_dir, "lrs")
+                if is_style:
+                    size_config_file = os.path.join(lrs_dir, "style_size.json")
                 else:
-                    size_key = None
-                    if 1 <= dataset_size <= 10:
-                        size_key = "xs"
-                    elif 11 <= dataset_size <= 20:
-                        size_key = "s"
-                    elif 21 <= dataset_size <= 30:
-                        size_key = "m"
-                    elif 31 <= dataset_size <= 50:
-                        size_key = "l"
-                    elif dataset_size >= 51:
-                        size_key = "xl"
-                    
-                    if size_key and size_key in lrs_settings:
-                        print(f"Applying model-specific config for size '{size_key}'", flush=True)
-                        for key, value in lrs_settings[size_key].items():
+                    size_config_file = os.path.join(lrs_dir, "person_size.json")
+                
+                if os.path.exists(size_config_file):
+                    try:
+                        with open(size_config_file, 'r') as f:
+                            size_config = json.load(f)
+                            
+                        if "data" in size_config and size_key in size_config["data"]:
+                            print(f"✓ Applying size-based config from {os.path.basename(size_config_file)} for size '{size_key}'", flush=True)
+                            for key, value in size_config["data"][size_key].items():
+                                config[key] = value
+                            size_config_loaded = True
+                    except Exception as e:
+                        print(f"Error loading size config: {e}", flush=True)
+
+        # PRIORITY 2: Fallback to model-specific config (person_config.json / style_config.json)
+        if not size_config_loaded:
+            print("Size config not found, trying model-specific config (FALLBACK)...", flush=True)
+            lrs_config = load_lrs_config(model_type, is_style)
+
+            if lrs_config:
+                model_hash = hash_model(model_name)
+                lrs_settings = get_config_for_model(lrs_config, model_hash)
+
+                if lrs_settings:
+                    if model_type == "flux":
+                        print(f"✓ Applying model-specific config for Flux model", flush=True)
+                        for key, value in lrs_settings.items():
                             config[key] = value
                         size_config_loaded = True
                     else:
-                        print(f"Warning: No size configuration '{size_key}' found for model '{model_name}'.", flush=True)
+                        size_key = None
+                        if 1 <= dataset_size <= 10:
+                            size_key = "xs"
+                        elif 11 <= dataset_size <= 20:
+                            size_key = "s"
+                        elif 21 <= dataset_size <= 30:
+                            size_key = "m"
+                        elif 31 <= dataset_size <= 50:
+                            size_key = "l"
+                        elif dataset_size >= 51:
+                            size_key = "xl"
+                        
+                        if size_key and size_key in lrs_settings:
+                            print(f"✓ Applying model-specific config for size '{size_key}'", flush=True)
+                            for key, value in lrs_settings[size_key].items():
+                                config[key] = value
+                            size_config_loaded = True
+                        else:
+                            print(f"Warning: No size configuration '{size_key}' found in model config.", flush=True)
+                else:
+                    print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
             else:
-                print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
-        else:
-            print("Warning: Could not load LRS configuration, using default values", flush=True)
+                print("Warning: Could not load model-specific LRS configuration", flush=True)
+
+        # Fix: constant scheduler doesn't support warmup steps
+        if config.get("lr_scheduler") == "constant" and "lr_warmup_steps" in config:
+            print(f"Warning: 'constant' scheduler doesn't require lr_warmup_steps. Setting to 0.", flush=True)
+            config["lr_warmup_steps"] = 0
+
+        if dataset_size > 0 and not size_config_loaded:
+             print(f"Warning: No size-specific configuration (xs/s/m/l/xl) found for model '{model_name}' with {dataset_size} images. Using model defaults.", flush=True)
 
         network_config_person = {
             "stabilityai/stable-diffusion-xl-base-1.0": 235,
@@ -349,48 +398,6 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             config["network_alpha"] = network_config["network_alpha"]
             config["network_args"] = network_config["network_args"]
 
-
-        # Old size config search removed as requested
-
-        # General size config fallback
-        if dataset_size > 0 and not size_config_loaded:
-             print("Checking for general size configuration...", flush=True)
-             
-             size_key = None
-             if 1 <= dataset_size <= 10:
-                 size_key = "xs"
-             elif 11 <= dataset_size <= 20:
-                 size_key = "s"
-             elif 21 <= dataset_size <= 30:
-                 size_key = "m"
-             elif 31 <= dataset_size <= 50:
-                 size_key = "l"
-             elif dataset_size >= 51:
-                 size_key = "xl"
-
-             if size_key:
-                 lrs_dir = os.path.join(script_dir, "lrs")
-                 if is_style:
-                     general_size_file = os.path.join(lrs_dir, "style_size.json")
-                 else:
-                     general_size_file = os.path.join(lrs_dir, "person_size.json")
-                 
-                 if os.path.exists(general_size_file):
-                     try:
-                         with open(general_size_file, 'r') as f:
-                             general_size_config = json.load(f)
-                             
-                         if "data" in general_size_config and size_key in general_size_config["data"]:
-                             print(f"Applying general size config from {os.path.basename(general_size_file)} for size '{size_key}'", flush=True)
-                             for key, value in general_size_config["data"][size_key].items():
-                                 config[key] = value
-                             size_config_loaded = True
-                     except Exception as e:
-                         print(f"Error loading general size config: {e}", flush=True)
-
-        if dataset_size > 0 and not size_config_loaded:
-             print(f"Warning: No size-specific configuration (xs/s/m/l/xl) found for model '{model_name}' with {dataset_size} images. Using model defaults.", flush=True)
-        
         config_path = os.path.join(train_cst.IMAGE_CONTAINER_CONFIG_SAVE_PATH, f"{task_id}.toml")
         save_config_toml(config, config_path)
         print(f"config is {config}", flush=True)
