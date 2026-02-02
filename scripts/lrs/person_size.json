@@ -11,7 +11,7 @@
             "optimizer_type": "prodigy",
             "optimizer_args": [
                 "decouple=True",
-                "d_coef=0.05",
+                "d_coef=0.8",
                 "weight_decay=0.015",
                 "use_bias_correction=True",
                 "safeguard_warmup=True"
@@ -28,7 +28,7 @@
             "optimizer_type": "prodigy",
             "optimizer_args": [
                 "decouple=True",
-                "d_coef=0.05",
+                "d_coef=0.8",
                 "weight_decay=0.015",
                 "use_bias_correction=True",
                 "safeguard_warmup=True"
@@ -45,7 +45,7 @@
             "optimizer_type": "prodigy",
             "optimizer_args": [
                 "decouple=True",
-                "d_coef=0.05",
+                "d_coef=0.8",
                 "weight_decay=0.015",
                 "use_bias_correction=True",
                 "safeguard_warmup=True"
@@ -62,7 +62,7 @@
             "optimizer_type": "prodigy",
             "optimizer_args": [
                 "decouple=True",
-                "d_coef=0.05",
+                "d_coef=0.8",
                 "weight_decay=0.015",
                 "use_bias_correction=True",
                 "safeguard_warmup=True"
@@ -79,7 +79,7 @@
             "optimizer_type": "prodigy",
             "optimizer_args": [
                 "decouple=True",
-                "d_coef=0.05",
+                "d_coef=0.8",
                 "weight_decay=0.015",
                 "use_bias_correction=True",
                 "safeguard_warmup=True"
