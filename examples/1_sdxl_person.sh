@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TASK_ID="1234"
+TASK_ID=""
 MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/c3c940501997df20_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260130%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260130T015004Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b825697f593aa92e92116d8aad68b7ff4a785491449b7ec01ce3ded3f1449a7d"
+DATASET_ZIP=""
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="John6666-nova-anime-xl-pony-v5-sdxl-person-1-10-1"
 

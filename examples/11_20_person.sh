@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TASK_ID="1234"
+TASK_ID="54ffa7b1-2f9e-45fd-a201-406a90ecbeb0"
 MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
 DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/31add51c949178db_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260130%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260130T054650Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2e484cc2f709ddb1d5ca94730247361b7e6998f0b5b10cb2f836939d59f96bdf"
 MODEL_TYPE="sdxl"

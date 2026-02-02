@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TASK_ID="1234"
+TASK_ID=""
 MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
