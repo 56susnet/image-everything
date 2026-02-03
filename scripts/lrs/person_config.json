@@ -1541,21 +1541,17 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
+                "max_train_epochs": 30,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.9,
-                "text_encoder_lr": 0.9,
-                "lr_scheduler": "constant",
+                "unet_lr": 0.0001,
+                "text_encoder_lr": 0.00005,
+                "lr_scheduler": "cosine",
                 "min_snr_gamma": 6,
                 "max_data_loader_n_workers": 4,
-                "optimizer_type": "prodigy",
+                "optimizer_type": "adamW",
                 "optimizer_args": [
-                    "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
-                    "use_bias_correction=True",
-                    "safeguard_warmup=True"
+                    "weight_decay=0.005"
                 ]
             },
             "m": {
