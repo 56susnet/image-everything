@@ -23,16 +23,21 @@ def get_image_base_model_path(model_id: str) -> str:
 def get_image_training_images_dir(task_id: str) -> str:
     return str(Path(train_cst.IMAGE_CONTAINER_IMAGES_PATH) / task_id / "img")
 
-def get_image_training_config_template_path(model_type: str, train_data_dir: str) -> tuple[str, bool]:
+def get_image_training_config_template_path(model_type: str, train_data_dir: str, repo_name: str = "") -> tuple[str, bool]:
     model_type = model_type.lower()
     if model_type == ImageModelType.SDXL.value:
+        # Force person mode if "person" is in the repo name
+        if repo_name and "person" in repo_name.lower():
+            return str(Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH) / "base_diffusion_sdxl_person.toml"), False
+
         prompts_path = os.path.join(train_data_dir, "5_lora style")
         prompts = []
-        for file in os.listdir(prompts_path):
-            if file.endswith(".txt"):
-                with open(os.path.join(prompts_path, file), "r") as f:
-                    prompt = f.read().strip()
-                    prompts.append(prompt)
+        if os.path.exists(prompts_path):
+            for file in os.listdir(prompts_path):
+                if file.endswith(".txt"):
+                    with open(os.path.join(prompts_path, file), "r") as f:
+                        prompt = f.read().strip()
+                        prompts.append(prompt)
 
         styles = detect_styles_in_prompts(prompts)
         print(f"Styles: {styles}")
