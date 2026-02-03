@@ -668,14 +668,14 @@
         },
         "7637327a8414801bf0bb4d6d1b574dd95c05525165ee271cc085b64f89c8cba8": {
             "xs": {
-                "max_train_epochs": 36,
+                "max_train_epochs": 35,
                 "train_batch_size": 4,
-                "gradient_accumulation_steps": 1,
+                "gradient_accumulation_steps": 2,
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
                 "min_snr_gamma": 6,
-                "caption_dropout_rate": 0.1,
+                "caption_dropout_rate": 0.3,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
