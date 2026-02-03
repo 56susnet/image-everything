@@ -668,19 +668,20 @@
         },
         "7637327a8414801bf0bb4d6d1b574dd95c05525165ee271cc085b64f89c8cba8": {
             "xs": {
-                "max_train_epochs": 38,
+                "max_train_epochs": 36,
                 "train_batch_size": 4,
-                "gradient_accumulation_steps": 2,
-                "unet_lr": 0.88,
-                "text_encoder_lr": 0.88,
+                "gradient_accumulation_steps": 1,
+                "unet_lr": 0.95,
+                "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 7,
+                "min_snr_gamma": 6,
+                "caption_dropout_rate": 0.1,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.01",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
