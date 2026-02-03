@@ -1,10 +1,10 @@
 #!/bin/bash
 
 TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
-MODEL=""
+MODEL="openart-custom/DynaVisionXL"
 DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/ad70ca35467ff8b5_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260130%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260130T061216Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6b419036660de465411f3d5511a458462ae1375333fcb84fbacd7e1eec5d5f02"
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_person-6"
+EXPECTED_REPO_NAME="test_21_30_style_GG"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""
