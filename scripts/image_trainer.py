@@ -160,6 +160,11 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
                     for key, value in lrs_settings.items():
                         config[key] = value
                 else:
+                    # Apply top-level settings (e.g. network_dim, network_alpha from default)
+                    for key, value in lrs_settings.items():
+                        if not isinstance(value, dict):
+                            config[key] = value
+
                     size_key = None
                     if 1 <= dataset_size <= 10:
                         size_key = "xs"
@@ -288,14 +293,22 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
         config["output_dir"] = output_dir
 
         if model_type == "sdxl":
+            # Check if network_dim was already set by LRS (it would be != -1 if set in LRS)
+            current_dim = config.get("network_dim", -1)
+            
             if is_style:
                 network_config = config_mapping[network_config_style[model_name]]
             else:
                 network_config = config_mapping[network_config_person[model_name]]
 
-            config["network_dim"] = network_config["network_dim"]
-            config["network_alpha"] = network_config["network_alpha"]
-            config["network_args"] = network_config["network_args"]
+            # Only apply default mapping if network_dim is not set by LRS (still default -1)
+            # This allows LRS to override with higher dimensions (e.g. 128, 256) for better loss
+            if current_dim == -1:
+                config["network_dim"] = network_config["network_dim"]
+                config["network_alpha"] = network_config["network_alpha"]
+                config["network_args"] = network_config["network_args"]
+            else:
+                print(f"Using LRS provided network_dim: {current_dim}", flush=True)
 
 
         # Old size config search removed as requested

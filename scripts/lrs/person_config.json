@@ -1,5 +1,9 @@
 {
-    "default": {},
+    "default": {
+        "network_dim": 256,
+        "network_alpha": 128,
+        "min_snr_gamma": 7
+    },
     "data": {
         "b89415872c1864f2a6ccccb34d6744021aa58eec13ab9109d4fa53931156ead4": {
             "xs": {
@@ -9,13 +13,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -27,13 +31,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -46,13 +50,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -65,13 +69,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -84,13 +88,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -110,7 +114,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -128,7 +132,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -147,7 +151,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -166,7 +170,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -185,7 +189,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -199,13 +203,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -217,13 +221,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -236,13 +240,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -255,13 +259,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -274,13 +278,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -294,13 +298,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -312,13 +316,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -331,13 +335,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -350,13 +354,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -369,13 +373,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -389,13 +393,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -407,13 +411,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -426,13 +430,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -445,13 +449,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -464,13 +468,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -484,13 +488,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -502,13 +506,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -521,13 +525,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -540,13 +544,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -559,13 +563,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -573,19 +577,19 @@
         },
         "f0beb2d95bfe25352803339af6c50e45e43f6a36125f42c69e5b8fe8b6e07462": {
             "xs": {
-                "max_train_epochs": 35,
-                "train_batch_size": 4,
-                "gradient_accumulation_steps": 2,
+                "max_train_epochs": 50,
+                "train_batch_size": 6,
+                "gradient_accumulation_steps": 1,
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -597,13 +601,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -616,13 +620,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -635,13 +639,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -654,13 +658,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -680,7 +684,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -698,7 +702,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -717,7 +721,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -736,7 +740,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -755,7 +759,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -769,13 +773,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -787,13 +791,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -806,13 +810,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -825,13 +829,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -844,13 +848,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -864,13 +868,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -882,13 +886,13 @@
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -901,13 +905,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -920,13 +924,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -939,13 +943,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -959,13 +963,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -977,13 +981,13 @@
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -996,13 +1000,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1015,13 +1019,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1034,13 +1038,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1054,13 +1058,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1072,13 +1076,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1091,13 +1095,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1110,13 +1114,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1129,13 +1133,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1155,7 +1159,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1173,7 +1177,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1192,7 +1196,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1211,7 +1215,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1230,7 +1234,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1244,13 +1248,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1262,13 +1266,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1281,13 +1285,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1300,13 +1304,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1319,13 +1323,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1339,13 +1343,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1357,13 +1361,13 @@
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1376,13 +1380,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1395,13 +1399,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1414,13 +1418,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1440,7 +1444,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1458,7 +1462,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.15",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1477,7 +1481,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1496,7 +1500,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1515,7 +1519,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1529,13 +1533,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1547,13 +1551,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1566,13 +1570,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1585,13 +1589,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1604,13 +1608,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1624,13 +1628,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1642,13 +1646,13 @@
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1661,13 +1665,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1680,13 +1684,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1699,13 +1703,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1719,13 +1723,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1737,13 +1741,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1756,13 +1760,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1775,13 +1779,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1794,13 +1798,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1814,13 +1818,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1832,13 +1836,13 @@
                 "unet_lr": 0.95,
                 "text_encoder_lr": 0.95,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1851,13 +1855,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1870,13 +1874,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1889,13 +1893,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1915,7 +1919,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1933,7 +1937,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.15",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1952,7 +1956,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1971,7 +1975,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -1990,7 +1994,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2004,13 +2008,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2022,13 +2026,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2041,13 +2045,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2060,13 +2064,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2079,13 +2083,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2105,7 +2109,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2123,7 +2127,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.15",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2142,7 +2146,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2161,7 +2165,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2180,7 +2184,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2200,7 +2204,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2218,7 +2222,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2237,7 +2241,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2256,7 +2260,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2275,7 +2279,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2289,13 +2293,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2307,13 +2311,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2326,13 +2330,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2345,13 +2349,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2364,13 +2368,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2384,13 +2388,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2402,13 +2406,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2421,13 +2425,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2440,13 +2444,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2459,13 +2463,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2479,13 +2483,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2497,13 +2501,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2516,13 +2520,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2535,13 +2539,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2554,13 +2558,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2574,13 +2578,13 @@
                 "unet_lr": 0.8,
                 "text_encoder_lr": 0.8,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2592,13 +2596,13 @@
                 "unet_lr": 0.9,
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2611,13 +2615,13 @@
                 "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2630,13 +2634,13 @@
                 "text_encoder_lr": 1.1,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2649,13 +2653,13 @@
                 "text_encoder_lr": 1.2,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2675,7 +2679,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2693,7 +2697,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2712,7 +2716,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2731,7 +2735,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2750,7 +2754,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2764,13 +2768,13 @@
                 "unet_lr": 0.84,
                 "text_encoder_lr": 0.84,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2782,13 +2786,13 @@
                 "unet_lr": 0.945,
                 "text_encoder_lr": 0.945,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2801,13 +2805,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2820,13 +2824,13 @@
                 "text_encoder_lr": 1.155,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2839,13 +2843,13 @@
                 "text_encoder_lr": 1.26,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2859,13 +2863,13 @@
                 "unet_lr": 0.84,
                 "text_encoder_lr": 0.84,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2877,13 +2881,13 @@
                 "unet_lr": 0.945,
                 "text_encoder_lr": 0.945,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2896,13 +2900,13 @@
                 "text_encoder_lr": 1.05,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2915,13 +2919,13 @@
                 "text_encoder_lr": 1.155,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2934,13 +2938,13 @@
                 "text_encoder_lr": 1.26,
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 7,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2960,7 +2964,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2978,7 +2982,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -2997,7 +3001,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3016,7 +3020,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3035,7 +3039,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3055,7 +3059,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.3",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3073,7 +3077,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3092,7 +3096,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.1",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3111,7 +3115,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -3130,7 +3134,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=0.9",
-                    "weight_decay=0.01",
+                    "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
