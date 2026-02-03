@@ -1599,10 +1599,10 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
+                "max_train_epochs": 34,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 2.8e-05,
+                "unet_lr": 2.9e-05,
                 "text_encoder_lr": 1.2e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 50,
@@ -1618,10 +1618,10 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 27,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 3.2e-05,
+                "unet_lr": 3.3e-05,
                 "text_encoder_lr": 1.5e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 75,
@@ -1637,10 +1637,10 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 18,
+                "max_train_epochs": 24,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 3.6e-05,
+                "unet_lr": 3.0e-05,
                 "text_encoder_lr": 1.8e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 100,
