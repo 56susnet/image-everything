@@ -351,7 +351,7 @@ def run_training(model_type, config_path, hours_to_complete):
         
         # Calculate timeout cutoff
         start_time = time.time()
-        timeout_seconds = (hours_to_complete * 3600) - 900 # 15 minutes buffer
+        timeout_seconds = hours_to_complete * 3600
         print(f"Training time limit: {hours_to_complete} hours. Force stop at: {timeout_seconds/3600:.2f} hours from now.", flush=True)
 
         process = subprocess.Popen(
