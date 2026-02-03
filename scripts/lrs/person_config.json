@@ -588,7 +588,7 @@
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.3",
+                    "d_coef=1",
                     "weight_decay=0.0",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
