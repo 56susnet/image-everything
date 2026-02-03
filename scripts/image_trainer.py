@@ -309,7 +309,7 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
         return config_path
 
 
-def run_training(model_type, config_path):
+def run_training(model_type, config_path, hours_to_complete):
     print(f"Starting training with config: {config_path}", flush=True)
 
     is_ai_toolkit = model_type in [ImageModelType.Z_IMAGE.value, ImageModelType.QWEN_IMAGE.value]
@@ -348,6 +348,12 @@ def run_training(model_type, config_path):
 
     try:
         print("Starting training subprocess...\n", flush=True)
+        
+        # Calculate timeout cutoff
+        start_time = time.time()
+        timeout_seconds = (hours_to_complete * 3600) - 900 # 15 minutes buffer
+        print(f"Training time limit: {hours_to_complete} hours. Force stop at: {timeout_seconds/3600:.2f} hours from now.", flush=True)
+
         process = subprocess.Popen(
             training_command,
             stdout=subprocess.PIPE,
@@ -356,8 +362,27 @@ def run_training(model_type, config_path):
             bufsize=1
         )
 
+        forced_stop = False
+
         for line in process.stdout:
             print(line, end="", flush=True)
+            
+            # Check for timeout
+            if not forced_stop and (time.time() - start_time > timeout_seconds):
+                print(f"\n\n[TIMEOUT] Time limit reached ({hours_to_complete} hours - 15 mins). Force stopping training for evaluation...", flush=True)
+                process.terminate()
+                forced_stop = True
+                break
+
+        if forced_stop:
+            try:
+                process.wait(timeout=60)
+            except subprocess.TimeoutExpired:
+                print("Process didn't terminate in time, killing...", flush=True)
+                process.kill()
+            
+            print("Training subprocess terminated for evaluation.", flush=True)
+            return
 
         return_code = process.wait()
         if return_code != 0:
@@ -414,7 +439,7 @@ async def main():
         args.trigger_word,
     )
 
-    run_training(args.model_type, config_path)
+    run_training(args.model_type, config_path, args.hours_to_complete)
 
 
 if __name__ == "__main__":
