@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TASK_ID="18de36d8-3441-42d1-8003-3cef83ae2f83"
-MODEL="718b60cf-3727-48f5-95b1-b8efed1d11e7"
+MODEL="718b60cf-3727-48f5-95b1-b8efed1d11e9"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="test_style-1"
