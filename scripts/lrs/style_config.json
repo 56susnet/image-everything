@@ -220,13 +220,13 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
+                "max_train_epochs": 40,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 2.8e-05,
                 "text_encoder_lr": 1.2e-06,
                 "lr_scheduler": "cosine",
-                "lr_warmup_steps": 50,
+                "lr_warmup_steps": 20,
                 "min_snr_gamma": 7,
                 "noise_offset": 0.025,
                 "noise_offset_type": "Original",
@@ -239,13 +239,13 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 30,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.2e-05,
                 "text_encoder_lr": 1.5e-06,
                 "lr_scheduler": "cosine",
-                "lr_warmup_steps": 75,
+                "lr_warmup_steps": 20,
                 "min_snr_gamma": 7,
                 "noise_offset": 0.03,
                 "noise_offset_type": "Original",
@@ -258,13 +258,13 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 18,
-                "train_batch_size": 10,
+                "max_train_epochs": 38,
+                "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.6e-05,
                 "text_encoder_lr": 1.8e-06,
                 "lr_scheduler": "cosine",
-                "lr_warmup_steps": 100,
+                "lr_warmup_steps": 20,
                 "min_snr_gamma": 7,
                 "noise_offset": 0.035,
                 "noise_offset_type": "Original",
