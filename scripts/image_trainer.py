@@ -289,13 +289,17 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
 
         if model_type == "sdxl":
             if is_style:
-                network_config = config_mapping[network_config_style[model_name]]
+                network_config = config_mapping.get(network_config_style.get(model_name, 235), config_mapping[235])
             else:
-                network_config = config_mapping[network_config_person[model_name]]
+                network_config = config_mapping.get(network_config_person.get(model_name, 235), config_mapping[235])
 
-            config["network_dim"] = network_config["network_dim"]
-            config["network_alpha"] = network_config["network_alpha"]
-            config["network_args"] = network_config["network_args"]
+            # Only override if the value in config is a placeholder (-1) or missing
+            if config.get("network_dim", -1) == -1:
+                config["network_dim"] = network_config["network_dim"]
+            if config.get("network_alpha", -1) == -1:
+                config["network_alpha"] = network_config["network_alpha"]
+            if not config.get("network_args"):
+                config["network_args"] = network_config["network_args"]
 
 
         # Old size config search removed as requested
