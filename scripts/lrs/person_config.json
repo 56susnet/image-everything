@@ -33,7 +33,7 @@
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.0",
-                    "weight_decay=0.01",
+                    "weight_decay=0.008",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
