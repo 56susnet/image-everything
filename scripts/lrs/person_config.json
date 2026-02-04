@@ -792,7 +792,7 @@
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.25",
+                    "d_coef=1.0",
                     "weight_decay=0.015",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
