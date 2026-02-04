@@ -689,18 +689,23 @@
                 "max_train_epochs": 35,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.99,
-                "text_encoder_lr": 0.99,
+                "loss_type": "huber",
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 7,
+                "lr_warmup_steps": 0,
+                "min_snr_gamma": 5.0,
+                "noise_offset": 0.05,
+                "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
                     "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "weight_decay=0.005",
                     "use_bias_correction=True",
-                    "safeguard_warmup=True"
+                    "safeguard_warmup=True",
+                    "betas=(0.9, 0.99)"
                 ]
             },
             "m": {

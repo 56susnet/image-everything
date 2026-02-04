@@ -725,7 +725,7 @@
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "adamw",
                 "optimizer_args": [
-                    "betas=(0.9, 0.99),",
+                    "betas=(0.9, 0.99)",
                     "weight_decay=0.0015",
                     "eps=1e-08"
                 ]
@@ -745,7 +745,7 @@
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "adamw",
                 "optimizer_args": [
-                    "betas=(0.9, 0.99),",
+                    "betas=(0.9, 0.99)",
                     "weight_decay=0.0015",
                     "eps=1e-08"
                 ]
