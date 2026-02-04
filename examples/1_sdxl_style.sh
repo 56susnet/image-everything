@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TASK_ID="718b60cf-3727-48f5-95b1-b8efed1d11e7"
+TASK_ID="tyest dancil"
 MODEL="fluently/Fluently-XL-Final"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
