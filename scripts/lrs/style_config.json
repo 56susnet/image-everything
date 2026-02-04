@@ -1599,10 +1599,10 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 34,
+                "max_train_epochs": 35,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 2.9e-05,
+                "unet_lr": 3.1e-05,
                 "text_encoder_lr": 1.2e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 50,
@@ -1618,10 +1618,10 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 27,
+                "max_train_epochs": 28,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 3.3e-05,
+                "unet_lr": 3.5e-05,
                 "text_encoder_lr": 1.5e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 75,
