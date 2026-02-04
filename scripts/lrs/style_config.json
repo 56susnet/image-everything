@@ -585,7 +585,7 @@
         },
         "84b1be29d81de0bf88d6c4033943d2bc4b543d9ebba9e1c9678296237f147466": {
             "xs": {
-                "max_train_epochs": 28,
+                "max_train_epochs": 32,
                 "train_batch_size": 4,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 2.4e-05,
@@ -604,7 +604,7 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 28,
                 "train_batch_size": 4,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 2.8e-05,
@@ -623,7 +623,7 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 24,
+                "max_train_epochs": 26,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.2e-05,
@@ -642,7 +642,7 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 20,
+                "max_train_epochs": 22,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.6e-05,
@@ -661,7 +661,7 @@
                 ]
             },
             "xl": {
-                "max_train_epochs": 14,
+                "max_train_epochs": 16,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 4.2e-05,
