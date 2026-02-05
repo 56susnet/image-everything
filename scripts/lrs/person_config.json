@@ -2776,10 +2776,10 @@
                 ]
             },
             "s": {
-                "prior_loss_weight": 0.65,
+                "prior_loss_weight": 0.77,
                 "min_snr_gamma": 6,
                 "train_batch_size": 6,
-                "max_train_epochs": 62,
+                "max_train_epochs": 58,
                 "huber_c": 0.1,
                 "huber_schedule": "snr",
                 "network_dim": 32,
