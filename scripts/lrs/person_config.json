@@ -2779,21 +2779,18 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 33,
-                "train_batch_size": 6,
-                "gradient_accumulation_steps": 1,
-                "unet_lr": 0.945,
-                "text_encoder_lr": 0.945,
-                "lr_scheduler": "constant",
+                "prior_loss_weight": 0.77,
                 "min_snr_gamma": 6,
-                "max_data_loader_n_workers": 4,
-                "optimizer_type": "prodigy",
-                "optimizer_args": [
-                    "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
-                    "use_bias_correction=True",
-                    "safeguard_warmup=True"
+                "train_batch_size": 6,
+                "max_train_epochs": 58,
+                "huber_c": 0.1,
+                "huber_schedule": "snr",
+                "network_dim": 32,
+                "network_alpha": 32,
+                "network_args": [
+                    "conv_dim=8",
+                    "conv_alpha=8",
+                    "algo=locon"
                 ]
             },
             "m": {
