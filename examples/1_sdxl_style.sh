@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="9fb20acd-836b-4450-8e64-4bfba602b6b6"
-MODEL="Lykon/dreamshaper-xl-1-0"
-DATASET_ZIP="https://s3.eu-central-003.backblazeb2.com/gradients-validator/5fee68863eb251ec_train_data.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=00362e8d6b742200000000002%2F20260129%2Feu-central-003%2Fs3%2Faws4_request&X-Amz-Date=20260129T170352Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=81739287e408a45ce07c001aecae09e0acc2bd2677a0b9d0f391fadfa18ca414"
+TASK_ID=""
+MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
+DATASET_ZIP=""
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="test_style-test"
+EXPECTED_REPO_NAME="John6666-nova-anime-xl-pony-v5-sdxl-style-1-10-1"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME=""
