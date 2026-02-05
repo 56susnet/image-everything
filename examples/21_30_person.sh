@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TASK_ID="a52092a4-8ed3-4373-90b4-7347083c7fa9"
-MODEL="Lykon/dreamshaper-xl-1-0"
+TASK_ID=""
+MODEL="John6666/nova-anime-xl-pony-v5-sdxl"
 DATASET_ZIP=""
 MODEL_TYPE="sdxl"
-EXPECTED_REPO_NAME="21-30-person-zay-1"
+EXPECTED_REPO_NAME="John6666-nova-anime-xl-pony-v5-sdxl-person-21-30-1"
 
 HUGGINGFACE_TOKEN=""
 HUGGINGFACE_USERNAME="Gege24"
