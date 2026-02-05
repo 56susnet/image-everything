@@ -157,23 +157,22 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 25,
-                "train_batch_size": 10,
-                "gradient_accumulation_steps": 1,
-                "unet_lr": 3.6e-05,
-                "text_encoder_lr": 1.8e-06,
-                "lr_scheduler": "cosine",
-                "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
-                "noise_offset": 0.035,
-                "noise_offset_type": "Original",
-                "max_data_loader_n_workers": 6,
-                "optimizer_type": "adamw",
+                "max_grad_norm": 1.2,
+                "prior_loss_weight": 0.5,
+                "max_train_epochs": 22,
+                "train_batch_size": 4,
+                "save_every_n_epochs": 5,
                 "optimizer_args": [
                     "betas=(0.9, 0.999)",
-                    "weight_decay=0.0001",
+                    "weight_decay=1e-03",
                     "eps=1e-08"
-                ]
+                ],
+                "unet_lr": 4e-5,
+                "text_encoder_lr": 4e-6,
+                "noise_offset": 0.0411,
+                "min_snr_gamma": 7,
+                "lr_warmup_steps": 20,
+                "seed": 2951032221
             },
             "xl": {
                 "max_train_epochs": 11,

@@ -7,7 +7,7 @@ MODEL_TYPE="sdxl"
 EXPECTED_REPO_NAME="John6666-nova-anime-xl-pony-v5-sdxl-style-11-20-1"
 
 HUGGINGFACE_TOKEN=""
-HUGGINGFACE_USERNAME=""
+HUGGINGFACE_USERNAME="Gege24"
 LOCAL_FOLDER="/app/checkpoints/$TASK_ID/$EXPECTED_REPO_NAME"
 
 CHECKPOINTS_DIR="$(pwd)/secure_checkpoints"
