@@ -26,14 +26,7 @@ def get_image_training_images_dir(task_id: str) -> str:
 def get_image_training_config_template_path(model_type: str, train_data_dir: str) -> tuple[str, bool]:
     model_type = model_type.lower()
     if model_type == ImageModelType.SDXL.value:
-        # Detect the concept folder dynamically (e.g., "3_lora style")
-        folders = [f for f in os.listdir(train_data_dir) if os.path.isdir(os.path.join(train_data_dir, f))]
-        if not folders:
-            raise FileNotFoundError(f"No concept folders found in {train_data_dir}")
-        
-        # Prefer the one with most images or just the first one found
-        prompts_folder = folders[0]
-        prompts_path = os.path.join(train_data_dir, prompts_folder)
+        prompts_path = os.path.join(train_data_dir, "5_lora style")
         prompts = []
         for file in os.listdir(prompts_path):
             if file.endswith(".txt"):
