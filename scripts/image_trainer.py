@@ -16,7 +16,7 @@ import time
 import yaml
 import toml
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
+script_dir = os.path.dirname(os.path.abspath(_file_))
 project_root = os.path.dirname(script_dir)
 sys.path.append(project_root)
 
@@ -86,7 +86,7 @@ def get_config_for_model(lrs_config: dict, model_name: str) -> dict:
     return None
 
 def load_lrs_config(model_type: str, is_style: bool) -> dict:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.abspath(_file_))
     config_dir = os.path.join(script_dir, "lrs")
 
     if model_type == "flux":
@@ -417,5 +417,5 @@ async def main():
     run_training(args.model_type, config_path)
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     asyncio.run(main())

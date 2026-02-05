@@ -1545,22 +1545,7 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
-                "train_batch_size": 6,
-                "gradient_accumulation_steps": 1,
-                "unet_lr": 0.9,
-                "text_encoder_lr": 0.9,
-                "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
-                "max_data_loader_n_workers": 4,
-                "optimizer_type": "prodigy",
-                "optimizer_args": [
-                    "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
-                    "use_bias_correction=True",
-                    "safeguard_warmup=True"
-                ]
+                "max_train_epochs": 30
             },
             "m": {
                 "max_train_epochs": 26,
