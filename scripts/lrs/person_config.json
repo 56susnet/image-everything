@@ -21,19 +21,19 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
-                "train_batch_size": 6,
+                "max_train_epochs": 33,
+                "train_batch_size": 4,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.9,
-                "text_encoder_lr": 0.9,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 5,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "d_coef=1.0",
+                    "weight_decay=0.008",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -591,19 +591,22 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
-                "train_batch_size": 6,
+                "max_train_epochs": 30,
+                "train_batch_size": 4,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.9,
-                "text_encoder_lr": 0.9,
+                "network_dim": 32,
+                "network_alpha": 32,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
-                "max_data_loader_n_workers": 4,
+                "min_snr_gamma": 5,
+                "prior_loss_weight": 1.0,
+                "max_data_loader_n_workers": 2,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
+                    "d_coef=1",
+                    "weight_decay=0.01",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
@@ -788,6 +791,7 @@
                 "text_encoder_lr": 0.9,
                 "lr_scheduler": "constant",
                 "min_snr_gamma": 6,
+                "caption_dropout_rate": 0.05,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
@@ -1603,13 +1607,14 @@
         },
         "84b1be29d81de0bf88d6c4033943d2bc4b543d9ebba9e1c9678296237f147466": {
             "xs": {
-                "max_train_epochs": 48,
+                "max_train_epochs": 35,
                 "train_batch_size": 4,
-                "gradient_accumulation_steps": 2,
-                "unet_lr": 0.9,
-                "text_encoder_lr": 0.9,
+                "gradient_accumulation_steps": 1,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 5,
+                "caption_dropout_rate": 0.03,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
@@ -1621,51 +1626,52 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 45,
-                "train_batch_size": 8,
+                "max_train_epochs": 30,
+                "train_batch_size": 4,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 0.95,
-                "text_encoder_lr": 0.95,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
                 "lr_scheduler": "constant",
-                "min_snr_gamma": 6,
+                "min_snr_gamma": 5,
+                "caption_dropout_rate": 0.05,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.1",
+                    "d_coef=1.0",
                     "weight_decay=0.01",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
             },
             "m": {
-                "max_train_epochs": 36,
-                "train_batch_size": 8,
+                "max_train_epochs": 26,
+                "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 1.0,
                 "text_encoder_lr": 1.0,
-                "lr_scheduler": "constant_with_warmup",
-                "lr_warmup_steps": 50,
-                "min_snr_gamma": 6,
+                "lr_scheduler": "constant",
+                "min_snr_gamma": 5,
+                "caption_dropout_rate": 0.05,
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=1.1",
+                    "d_coef=1.0",
                     "weight_decay=0.01",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
                 ]
             },
             "l": {
-                "max_train_epochs": 26,
-                "train_batch_size": 10,
+                "max_train_epochs": 22,
+                "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 1.05,
-                "text_encoder_lr": 1.05,
-                "lr_scheduler": "constant_with_warmup",
-                "lr_warmup_steps": 75,
-                "min_snr_gamma": 6,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
+                "lr_scheduler": "constant",
+                "min_snr_gamma": 5,
+                "caption_dropout_rate": 0.07,
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
@@ -1678,18 +1684,18 @@
             },
             "xl": {
                 "max_train_epochs": 16,
-                "train_batch_size": 12,
+                "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 1.1,
-                "text_encoder_lr": 1.1,
-                "lr_scheduler": "constant_with_warmup",
-                "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
+                "unet_lr": 1.0,
+                "text_encoder_lr": 1.0,
+                "lr_scheduler": "constant",
+                "min_snr_gamma": 5,
+                "caption_dropout_rate": 0.1,
                 "max_data_loader_n_workers": 8,
                 "optimizer_type": "prodigy",
                 "optimizer_args": [
                     "decouple=True",
-                    "d_coef=0.9",
+                    "d_coef=1.0",
                     "weight_decay=0.01",
                     "use_bias_correction=True",
                     "safeguard_warmup=True"
@@ -2761,21 +2767,18 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 33,
-                "train_batch_size": 6,
-                "gradient_accumulation_steps": 1,
-                "unet_lr": 0.945,
-                "text_encoder_lr": 0.945,
-                "lr_scheduler": "constant",
+                "prior_loss_weight": 0.77,
                 "min_snr_gamma": 6,
-                "max_data_loader_n_workers": 4,
-                "optimizer_type": "prodigy",
-                "optimizer_args": [
-                    "decouple=True",
-                    "d_coef=1.2",
-                    "weight_decay=0.015",
-                    "use_bias_correction=True",
-                    "safeguard_warmup=True"
+                "train_batch_size": 6,
+                "max_train_epochs": 58,
+                "huber_c": 0.1,
+                "huber_schedule": "snr",
+                "network_dim": 32,
+                "network_alpha": 32,
+                "network_args": [
+                    "conv_dim=8",
+                    "conv_alpha=8",
+                    "algo=locon"
                 ]
             },
             "m": {
