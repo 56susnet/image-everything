@@ -1601,10 +1601,10 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 18,
+                "max_train_epochs": 24,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 3.6e-05,
+                "unet_lr": 3.0e-05,
                 "text_encoder_lr": 1.8e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 100,
