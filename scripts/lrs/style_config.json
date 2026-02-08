@@ -3,7 +3,7 @@
     "data": {
         "eb324bfcad14e8f1d46346f46ae7af7d3e58c3babbc1f699ee7c61baab291369": {
             "xs": {
-                "max_train_epochs": 38,
+                "max_train_epochs": 42,
                 "train_batch_size": 4,
                 "gradient_accumulation_steps": 2,
                 "unet_lr": 2.2e-05,
@@ -11,7 +11,7 @@
                 "lr_scheduler": "constant_with_warmup",
                 "lr_warmup_steps": 25,
                 "min_snr_gamma": 6,
-                "noise_offset": 0.02,
+                "noise_offset": 0.03,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "adamw",
@@ -22,15 +22,15 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 32,
+                "max_train_epochs": 50,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 2.8e-05,
+                "unet_lr": 3.2e-05,
                 "text_encoder_lr": 1.2e-06,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 50,
                 "min_snr_gamma": 6,
-                "noise_offset": 0.025,
+                "noise_offset": 0.0357,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "adamw",
@@ -41,7 +41,7 @@
                 ]
             },
             "m": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 35,
                 "train_batch_size": 8,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.2e-05,
@@ -49,7 +49,7 @@
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 75,
                 "min_snr_gamma": 6,
-                "noise_offset": 0.03,
+                "noise_offset": 0.0357,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 4,
                 "optimizer_type": "adamw",
@@ -60,7 +60,7 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 18,
+                "max_train_epochs": 30,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
                 "unet_lr": 3.6e-05,
@@ -68,7 +68,7 @@
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 100,
                 "min_snr_gamma": 6,
-                "noise_offset": 0.035,
+                "noise_offset": 0.0357,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "adamw",
