@@ -22,25 +22,22 @@
                 ]
             },
             "s": {
-                "max_train_epochs": 22,
+                "max_train_epochs": 45,
                 "train_batch_size": 6,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 1.0,
-                "text_encoder_lr": 1.0,
-                "lr_scheduler": "constant",
-                "lr_warmup_steps": 0,
+                "unet_lr": 2.2e-05,
+                "text_encoder_lr": 1e-06,
+                "lr_scheduler": "cosine",
+                "lr_warmup_steps": 50,
                 "min_snr_gamma": 5,
                 "noise_offset": 0.0357,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 4,
-                "optimizer_type": "prodigy",
+                "optimizer_type": "adamw",
                 "optimizer_args": [
                     "betas=(0.9, 0.999)",
-                    "weight_decay=0.01",
-                    "decouple=True",
-                    "use_bias_correction=True",
-                    "safeguard_warmup=True",
-                    "d_coef=0.8"
+                    "weight_decay=0.00015",
+                    "eps=1e-08"
                 ]
             },
             "m": {
@@ -63,21 +60,21 @@
                 ]
             },
             "l": {
-                "max_train_epochs": 25,
+                "max_train_epochs": 35,
                 "train_batch_size": 10,
                 "gradient_accumulation_steps": 1,
-                "unet_lr": 3.6e-05,
-                "text_encoder_lr": 1.8e-06,
+                "unet_lr": 1.8e-05,
+                "text_encoder_lr": 8e-07,
                 "lr_scheduler": "cosine",
                 "lr_warmup_steps": 100,
-                "min_snr_gamma": 6,
-                "noise_offset": 0.035,
+                "min_snr_gamma": 5,
+                "noise_offset": 0.04,
                 "noise_offset_type": "Original",
                 "max_data_loader_n_workers": 6,
                 "optimizer_type": "adamw",
                 "optimizer_args": [
                     "betas=(0.9, 0.999)",
-                    "weight_decay=0.0001",
+                    "weight_decay=0.0002",
                     "eps=1e-08"
                 ]
             },
